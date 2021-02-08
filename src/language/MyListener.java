@@ -31,9 +31,27 @@ public class MyListener<T> extends LanguageBaseListener{
     }
 
     @Override public void exitSum(SumContext ctx) {
-        int a = parseTreeProperty.get(ctx.expression(0));
-        int b = parseTreeProperty.get(ctx.expression(1));
-        int c = a + b;
+        String op = ctx.getChild(1).getText();
+        int a = parseTreeProperty.get(ctx.expression(0));  // 1
+        int b = parseTreeProperty.get(ctx.expression(1));  // 2
+        int c;
+        if (op.equals("+")) c = a + b;
+        else           c = a - b;
+        parseTreeProperty.put(ctx, c);
+    }
+
+    @Override public void exitMult(MultContext ctx) {
+        String op = ctx.getChild(1).getText();
+        int a = parseTreeProperty.get(ctx.expression(0));  // 1
+        int b = parseTreeProperty.get(ctx.expression(1));  // 2
+        int c;
+        if (op.equals("*")) c = a * b;
+        else           c = a / b;
+        parseTreeProperty.put(ctx, c);       
+    }
+
+    @Override public void exitParen(ParenContext ctx) {
+        int c = parseTreeProperty.get(ctx.expression());
         parseTreeProperty.put(ctx, c);
     }
 

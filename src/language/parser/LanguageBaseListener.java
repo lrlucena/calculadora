@@ -1,4 +1,4 @@
-// Generated from c:\Users\leona\git\GitHub\antlr_template\src\language\Language.g4 by ANTLR 4.8
+// Generated from c:\Users\leona\git\GitHub\calculadora\src\language\Language.g4 by ANTLR 4.8
 package language.parser;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -23,6 +23,30 @@ public class LanguageBaseListener implements LanguageListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitProgram(LanguageParser.ProgramContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterParen(LanguageParser.ParenContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitParen(LanguageParser.ParenContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMult(LanguageParser.MultContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMult(LanguageParser.MultContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -1,13 +1,13 @@
 grammar Language; 
 
-program: expression EOF; 
+program: expression EOF;
 
-expression: INT                          # int
-          | expression '+' expression    # sum
+expression: INT                                # int
+          | expression ('*'|'/') expression    # mult
+          | expression ('+'|'-') expression    # sum
+          | '(' expression ')'                 # paren
           ;
 
 INT: ('0'..'9')+;
 
 Space: [ \t\n\r] -> skip; 
-
-//Comment: '#' .*? '\n' -> skip;
